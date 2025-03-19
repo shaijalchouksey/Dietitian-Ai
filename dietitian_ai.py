@@ -42,15 +42,17 @@ st.markdown("<h1 class='main-title'>The Dietitian AI 🍽️</h1>", unsafe_allow
 # Display Banner Image
 # Display Banner Image
 image_url = "https://raw.githubusercontent.com/shaijalchouksey/Dietitian-Ai/main/a1b89bb1-7eb8-478c-996f-1edddf5e69ec.webp"
+
 st.markdown("<div class='image-container'>", unsafe_allow_html=True)
 
 try:
+    # Try displaying the GitHub-hosted image
     st.image(image_url, use_container_width=False, width=300)
 except:
+    # If it fails, show a placeholder image
     st.image("https://source.unsplash.com/1600x400/?healthy-food,fruits,vegetables", use_container_width=False, width=300)
 
 st.markdown("</div>", unsafe_allow_html=True)
-
 
 # User Inputs
 gender = st.selectbox("Select Gender", ["Male", "Female"])
