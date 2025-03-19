@@ -40,13 +40,17 @@ st.markdown("""
 st.markdown("<h1 class='main-title'>The Dietitian AI 🍽️</h1>", unsafe_allow_html=True)
 
 # Display Banner Image
-image_path = "C:/Users/abhib/Desktop/Project/Dietitian_AI-master/a1b89bb1-7eb8-478c-996f-1edddf5e69ec.webp"
+# Display Banner Image
+image_url = "https://raw.githubusercontent.com/shaijalchouksey/Dietitian-Ai/main/a1b89bb1-7eb8-478c-996f-1edddf5e69ec.webp"
 st.markdown("<div class='image-container'>", unsafe_allow_html=True)
-if os.path.exists(image_path):
-    st.image(image_path, use_container_width=False, width=300)
-else:
+
+try:
+    st.image(image_url, use_container_width=False, width=300)
+except:
     st.image("https://source.unsplash.com/1600x400/?healthy-food,fruits,vegetables", use_container_width=False, width=300)
+
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 # User Inputs
 gender = st.selectbox("Select Gender", ["Male", "Female"])
